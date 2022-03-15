@@ -9,8 +9,6 @@
 #define kern_tbfixup_hpp
 
 #include <Headers/kern_patcher.hpp>
-#include <stdatomic.h>
-#include <IOKit/pci/IOPCIDevice.h>
 
 class TBFixup {
 public:
@@ -81,7 +79,7 @@ private:
 	static IOReturn AppleThunderboltNHIType3_wake(void *that);
 	
 	/**
-	 *  Original method
+	 *  Original methods
 	 */
 	mach_vm_address_t orgAppleThunderboltNHIIntelPCI_earlySleep {};
 	mach_vm_address_t orgAppleThunderboltGenericHAL_earlySleep {};

@@ -36,19 +36,19 @@ void TBFixup::deinit()
 
 IOReturn TBFixup::AppleThunderboltNHIIntelPCI_earlySleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::earlySleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::earlySleep is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltGenericHAL_earlySleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltGenericHAL::earlySleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltGenericHAL::earlySleep is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHIType3_earlySleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIType3::earlySleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIType3::earlySleep is called");
 	return KERN_SUCCESS;
 }
 
@@ -56,31 +56,31 @@ IOReturn TBFixup::AppleThunderboltNHIType3_earlySleep(void *that)
 
 IOReturn TBFixup::AppleThunderboltNHIIntelPCI_lateSleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::lateSleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::lateSleep is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltGenericHAL_lateSleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltGenericHAL::lateSleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltGenericHAL::lateSleep is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHI_lateSleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHI::lateSleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHI::lateSleep is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHI_lateSleepInternal(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHI::lateSleepInternal is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHI::lateSleepInternal is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHIType3_lateSleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIType::lateSleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIType::lateSleep is called");
 	return KERN_SUCCESS;
 }
 
@@ -88,24 +88,24 @@ IOReturn TBFixup::AppleThunderboltNHIType3_lateSleep(void *that)
 
 IOReturn TBFixup::AppleThunderboltNHIIntelPCI_sleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::sleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::sleep is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHI_sleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHI::sleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHI::sleep is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHIType3_sleep(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIType3::sleep is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIType3::sleep is called");
 	IOReturn result = KERN_SUCCESS;
 	static bool initial = true;
 	if (initial)
 	{
-		SYSLOG("TBFIXUP", "Original method AppleThunderboltNHIType3::sleep is called");
+		DBGLOG("TBFIXUP", "Original method AppleThunderboltNHIType3::sleep is called");
 		result = FunctionCast(AppleThunderboltNHIType3_sleep, callbackTBFIXUP->orgAppleThunderboltNHIType3_sleep)(that);
 		initial = false;
 	}
@@ -116,25 +116,25 @@ IOReturn TBFixup::AppleThunderboltNHIType3_sleep(void *that)
 
 IOReturn TBFixup::AppleThunderboltNHIIntelPCI_prePCIWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::prePCIWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::prePCIWake is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltGenericHAL_prePCIWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltGenericHAL::prePCIWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltGenericHAL::prePCIWake is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHI_prePCIWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHI::prePCIWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHI::prePCIWake is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHIType3_prePCIWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIType3::prePCIWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIType3::prePCIWake is called");
 	return KERN_SUCCESS;
 }
 
@@ -142,36 +142,36 @@ IOReturn TBFixup::AppleThunderboltNHIType3_prePCIWake(void *that)
 
 IOReturn TBFixup::AppleThunderboltNHIIntelPCI_earlyWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::earlyWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::earlyWake is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltGenericHAL_earlyWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltGenericHAL::earlyWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltGenericHAL::earlyWake is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHI_earlyWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHI::earlyWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHI::earlyWake is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHI_earlyWakeInternal(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHI::earlyWakeInternal is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHI::earlyWakeInternal is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltIntelPCIHAL_earlyWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltIntelPCIHAL::earlyWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltIntelPCIHAL::earlyWake is called");
 	IOReturn result = KERN_SUCCESS;
 	static bool initial = true;
 	if (initial)
 	{
-		SYSLOG("TBFIXUP", "Original method AppleThunderboltIntelPCIHAL::earlyWake is called");
+		DBGLOG("TBFIXUP", "Original method AppleThunderboltIntelPCIHAL::earlyWake is called");
 		result = FunctionCast(AppleThunderboltIntelPCIHAL_earlyWake, callbackTBFIXUP->orgAppleThunderboltIntelPCIHAL_earlyWake)(that);
 		initial = false;
 	}
@@ -180,7 +180,7 @@ IOReturn TBFixup::AppleThunderboltIntelPCIHAL_earlyWake(void *that)
 
 IOReturn TBFixup::AppleThunderboltNHIType3_earlyWake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIType3::earlyWake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIType3::earlyWake is called");
 	return KERN_SUCCESS;
 }
 
@@ -188,19 +188,19 @@ IOReturn TBFixup::AppleThunderboltNHIType3_earlyWake(void *that)
 
 IOReturn TBFixup::AppleThunderboltNHIIntelPCI_wake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::wake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIIntelPCI::wake is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHI_wake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHI::wake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHI::wake is called");
 	return KERN_SUCCESS;
 }
 
 IOReturn TBFixup::AppleThunderboltNHIType3_wake(void *that)
 {
-	SYSLOG("TBFIXUP", "AppleThunderboltNHIType3::wake is called");
+	DBGLOG("TBFIXUP", "AppleThunderboltNHIType3::wake is called");
 	return KERN_SUCCESS;
 }
 
@@ -239,7 +239,7 @@ void TBFixup::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_
 		};
 		patcher.routeMultiple(index, requests, address, size);
 		if (patcher.getError() == KernelPatcher::Error::NoError) {
-			SYSLOG("TBFIXUP", "routed %s", requests[0].symbol);
+			DBGLOG("TBFIXUP", "routed %s", requests[0].symbol);
 		} else {
 			SYSLOG("TBFIXUP", "failed to resolve %s, error = %d", requests[0].symbol, patcher.getError());
 			patcher.clearError();
