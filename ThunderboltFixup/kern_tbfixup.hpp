@@ -78,6 +78,8 @@ private:
 	
 	static IOReturn AppleThunderboltNHIType3_wake(void *that);
 	
+	static IOReturn AppleThunderboltNHI_resetNHI(void *that);
+	
 	/**
 	 *  Original methods
 	 */
@@ -105,6 +107,7 @@ private:
 	mach_vm_address_t orgAppleThunderboltNHIIntelPCI_wake {};
 	mach_vm_address_t orgAppleThunderboltNHI_wake {};
 	mach_vm_address_t orgAppleThunderboltNHIType3_wake {};
+	mach_vm_address_t orgAppleThunderboltNHI_resetNHI {};
 };
 
 #endif /* kern_tbfixup_hpp */

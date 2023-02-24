@@ -204,6 +204,12 @@ IOReturn TBFixup::AppleThunderboltNHIType3_wake(void *that)
 	return KERN_SUCCESS;
 }
 
+IOReturn TBFixup::AppleThunderboltNHI_resetNHI(void *that)
+{
+	DBGLOG("TBFIXUP", "AppleThunderboltNHI::resetNHI is called");
+	return KERN_SUCCESS;
+}
+
 //==============================================================================
 
 void TBFixup::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_t address, size_t size)
@@ -235,7 +241,8 @@ void TBFixup::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_
 			{"__ZN24AppleThunderboltNHIType39earlyWakeEv", AppleThunderboltNHIType3_earlyWake, orgAppleThunderboltNHIType3_earlyWake},
 			{"__ZN27AppleThunderboltNHIIntelPCI4wakeEv", AppleThunderboltNHIIntelPCI_wake, orgAppleThunderboltNHIIntelPCI_wake},
 			{"__ZN19AppleThunderboltNHI4wakeEv", AppleThunderboltNHI_wake, orgAppleThunderboltNHI_wake},
-			{"__ZN24AppleThunderboltNHIType34wakeEv", AppleThunderboltNHIType3_wake, orgAppleThunderboltNHIType3_wake}
+			{"__ZN24AppleThunderboltNHIType34wakeEv", AppleThunderboltNHIType3_wake, orgAppleThunderboltNHIType3_wake},
+			{"__ZN19AppleThunderboltNHI8resetNHIEv", AppleThunderboltNHI_resetNHI, orgAppleThunderboltNHI_resetNHI}
 		};
 		patcher.routeMultiple(index, requests, address, size);
 		if (patcher.getError() == KernelPatcher::Error::NoError) {
